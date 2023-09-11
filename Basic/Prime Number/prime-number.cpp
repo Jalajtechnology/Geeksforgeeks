@@ -1,4 +1,5 @@
 //{ Driver Code Starts
+// approach is find factor between 2 to sqrt(N) . if N has any divisor between 2 to sqrt(N) then it is not prime no.
 #include<bits/stdc++.h> 
 using namespace std;
 
