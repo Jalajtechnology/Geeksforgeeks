@@ -1,4 +1,5 @@
 //{ Driver Code Starts
+// I have use euclid algorithm for solving this question. it has complexity log (min(A,B)).
 #include <bits/stdc++.h>
 using namespace std;
 
