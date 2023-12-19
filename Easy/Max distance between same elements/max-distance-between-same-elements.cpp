@@ -10,29 +10,24 @@ class Solution{
     {
     //Code here
     unordered_map<int,int>hashtable;
-    int maxdistance=INT_MIN;
+    int max=0;
     for(int i=0;i<n;i++)
     {
-        if(hashtable.find(arr[i])!=hashtable.end())
-        {
-            int k=i-hashtable[arr[i]];
-            if(k>maxdistance)
-            {
-                maxdistance=k;
-            }
-        }
-        else
+        if(hashtable.find(arr[i])==hashtable.end())
         {
             hashtable[arr[i]]=i;
         }
-        
+        else
+        {
+            if((i-hashtable[arr[i]])>max)
+            {
+                max=i-hashtable[arr[i]];
+            }
+            
+        }
     }
-    if(maxdistance==INT_MIN)
-    {
-        return 0;
-    }
-    return maxdistance;
-    
+    return max;
+   
     }
 };
 
