@@ -9,25 +9,25 @@ class Solution{
     int maxDistance(int arr[], int n)
     {
     //Code here
-    unordered_map<int,int>hashtable;
-    int max=0;
-    for(int i=0;i<n;i++)
-    {
-        if(hashtable.find(arr[i])==hashtable.end())
-        {
-            hashtable[arr[i]]=i;
-        }
-        else
-        {
-            if((i-hashtable[arr[i]])>max)
-            {
-                max=i-hashtable[arr[i]];
-            }
-            
-        }
-    }
-    return max;
-   
+     int max=INT_MIN;
+     
+     unordered_map<int,int>hashtable;
+     for(int i=0;i<n;i++)
+     {
+         if(hashtable.find(arr[i])!=hashtable.end())
+         {
+              int distance=i-hashtable[arr[i]];
+             if(distance>max)
+             {
+                 max=distance;
+             }
+         }
+         else
+         {
+             hashtable[arr[i]]=i;
+         }
+     }
+     return max;
     }
 };
 
