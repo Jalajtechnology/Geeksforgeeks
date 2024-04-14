@@ -10,9 +10,9 @@ class Solution{
     int findSubArraySum(int Arr[], int N, int k)
     {
         // code here
-        unordered_map<int,int>hashtable;
-        int count=0;
         int sum=0;
+        int count=0;
+        unordered_map<int,int>hashtable;
         for(int i=0;i<N;i++)
         {
             sum=sum+Arr[i];
@@ -20,17 +20,16 @@ class Solution{
             {
                 count++;
             }
-            if(hashtable.find(sum-k)!=hashtable.end())
-            {
-                count=count+hashtable[sum-k];
-            }
+            
+            
+                if (hashtable.find(sum-k)!=hashtable.end())
+                {
+                    count=count+hashtable[sum-k];
+                }
+            
             hashtable[sum]++;
-           
-            
-            
         }
         return count;
-        
     }
 };
 
